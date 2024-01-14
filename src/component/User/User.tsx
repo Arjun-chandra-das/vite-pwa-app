@@ -17,10 +17,10 @@ const User: React.FC = () => {
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => {
-        res.json().then((result) => {
+        res?.json().then((result) => {
           console.warn("result", result);
           setData(result);
-          localStorage.setItem("user", JSON.stringify(result));
+          localStorage.setItem("user", JSON?.stringify(result));
         });
       })
       .catch(() => {
